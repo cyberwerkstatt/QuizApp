@@ -20,6 +20,17 @@ body {
     width: 25rem !important;
 }
 
+.answers a {
+    text-decoration: none;
+    color: black !important;
+}
+
+.answers:hover {
+    background-color: rgba(78, 84, 84, 0.44);
+    transition: 225ms ease-in-out;
+    
+}
+
 .main-card {
     display: flex;
     justify-content: center;

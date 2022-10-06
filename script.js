@@ -19,10 +19,10 @@ let questions = [
 
     {
         "question": "Wer 3?",
-        "answer_1":"Antwort1",
-        "answer_2":"Antwort2",
-        "answer_3":"Antwort3",
-        "answer_4":"Antwort4",
+        "answer_1":"Antwortx",
+        "answer_2":"Antworty",
+        "answer_3":"Antwortz",
+        "answer_4":"Antwortu",
         "right_answer": 4   
     },
 
@@ -57,8 +57,17 @@ function startQuiz(counter){
     
 }
 
-function checkAnswer(){
+function answer(selection){
+    let question = questions[counter];
+    let selectedQuestionNumber = selection.slice(-1);
+    
 
+    if (selectedQuestionNumber == question.right_answer){
+        console.log("richtig!")
+        nextQuestion();
+    }else{
+        console.log("falsch!")
+    }
 }
 
 function nextQuestion() {
