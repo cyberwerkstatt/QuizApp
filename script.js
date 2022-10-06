@@ -45,6 +45,14 @@ function init(){
 }
  
 function startQuiz(counter){
+
+    if(counter >= questions.length){
+        document.getElementById("container").innerHTML = `
+        <div>Ende!</div>
+        
+        `;
+    }
+
     document.getElementById("questions").innerHTML = `<h2>${questions[counter]["question"]}</h2>`;
     document.getElementById("answer_1").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_1"]}</a>`;
     document.getElementById("answer_2").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_2"]}</a>`;
@@ -68,6 +76,7 @@ function answer(selection){
 
 function nextQuestion() {
     counter += 1;
+    document.getElementById("question-number").innerHTML = counter+1;
     startQuiz(counter);
     document.getElementById("button").setAttribute("disabled","disabled")
     document.getElementById(`answer_${questions[counter-1].right_answer}`).classList.remove("bg-success")
