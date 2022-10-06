@@ -50,6 +50,10 @@ function init(){
  
 function startQuiz(counter){
     document.getElementById("questions").innerHTML = `<h2>${questions[counter]["question"]}</h2>`;
+    document.getElementById("answer1").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_1"]}</a>`;
+    document.getElementById("answer2").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_2"]}</a>`;
+    document.getElementById("answer3").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_3"]}</a>`;
+    document.getElementById("answer4").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_4"]}</a>`;
     
 }
 
