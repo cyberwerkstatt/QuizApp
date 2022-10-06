@@ -25,6 +25,10 @@ body {
     color: black !important;
 }
 
+.display-answer-color {
+    background-color: rgb(20, 205, 20) !important;
+}
+
 .answers:hover {
     background-color: rgba(78, 84, 84, 0.44);
     transition: 225ms ease-in-out;

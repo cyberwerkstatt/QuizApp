@@ -50,22 +50,22 @@ function init(){
  
 function startQuiz(counter){
     document.getElementById("questions").innerHTML = `<h2>${questions[counter]["question"]}</h2>`;
-    document.getElementById("answer1").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_1"]}</a>`;
-    document.getElementById("answer2").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_2"]}</a>`;
-    document.getElementById("answer3").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_3"]}</a>`;
-    document.getElementById("answer4").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_4"]}</a>`;
+    document.getElementById("answer_1").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_1"]}</a>`;
+    document.getElementById("answer_2").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_2"]}</a>`;
+    document.getElementById("answer_3").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_3"]}</a>`;
+    document.getElementById("answer_4").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_4"]}</a>`;
     
 }
 
 function answer(selection){
     let question = questions[counter];
     let selectedQuestionNumber = selection.slice(-1);
-    
+    console.log(selection)
 
     if (selectedQuestionNumber == question.right_answer){
-        console.log("richtig!")
+        document.getElementById(selection).classList.add("bg-success");
     }else{
-        console.log("falsch!")
+        document.getElementById(selection).classList.add("bg-danger");
     }
 }
 
