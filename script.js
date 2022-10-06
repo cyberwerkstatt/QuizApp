@@ -38,15 +38,11 @@ let questions = [
 
 let counter = 0;
 
-
 function init(){
     document.getElementById("all-questions").innerHTML = questions.length;
     startQuiz(counter);
+    document.getElementById("button").setAttribute("disabled","disabled")
 }
-
-
-
-
  
 function startQuiz(counter){
     document.getElementById("questions").innerHTML = `<h2>${questions[counter]["question"]}</h2>`;
@@ -60,19 +56,28 @@ function startQuiz(counter){
 function answer(selection){
     let question = questions[counter];
     let selectedQuestionNumber = selection.slice(-1);
-    console.log(selection)
-
+    let idOfRightAnswer = `answer_${question.right_answer}`;
     if (selectedQuestionNumber == question.right_answer){
         document.getElementById(selection).classList.add("bg-success");
     }else{
-        document.getElementById(selection).classList.add("bg-danger");
+        document.getElementById(idOfRightAnswer).classList.add("bg-success");
+        document.getElementById(selection).classList.add("bg-danger"); 
     }
+    document.getElementById("button").removeAttribute("disabled")
 }
 
 function nextQuestion() {
     counter += 1;
     startQuiz(counter);
-    if (counter > 3){
-        counter = 0;
+    document.getElementById("button").setAttribute("disabled","disabled")
+    document.getElementById(`answer_${questions[counter-1].right_answer}`).classList.remove("bg-success")
+    resetButton()
+}
+
+function resetButton(){
+    for(let i = 1; i <=4; i++){
+        document.getElementById(`answer_${i}`).classList.remove("bg-danger")
     }
 }
+
+
