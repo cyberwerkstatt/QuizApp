@@ -64,7 +64,6 @@ function answer(selection){
 
     if (selectedQuestionNumber == question.right_answer){
         console.log("richtig!")
-        nextQuestion();
     }else{
         console.log("falsch!")
     }
