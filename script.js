@@ -37,6 +37,9 @@ let questions = [
 ];
 
 let counter = 0;
+let rightQuestions = 0;
+
+
 
 function init(){
     document.getElementById("all-questions").innerHTML = questions.length;
@@ -50,7 +53,7 @@ function startQuiz(counter){
         
         document.getElementById("endScreen").style = '';
         document.getElementById("container").style = 'display:none'
-        
+        document.getElementById("rightAnswers").innerHTML = rightQuestions;
         
     } else {
         
@@ -77,6 +80,10 @@ function answer(selection){
         document.getElementById(selection).classList.add("bg-danger"); 
     }
     document.getElementById("button").removeAttribute("disabled")
+    
+    if (selection == idOfRightAnswer){
+        rightQuestions ++;
+    }
 }
 
 function nextQuestion() {
