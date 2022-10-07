@@ -45,5 +45,10 @@ body {
 a {
     cursor: pointer;
 }
+
+.endPic {
+    width: 50vh;
+    border-radius: 100%;
+}
     
     

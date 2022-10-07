@@ -47,17 +47,22 @@ function init(){
 function startQuiz(counter){
 
     if(counter >= questions.length){
-        document.getElementById("container").innerHTML = `
-        <div>Ende!</div>
         
-        `;
+        document.getElementById("endScreen").style = '';
+        document.getElementById("container").style = 'display:none'
+        
+        
+    } else {
+        
+        document.getElementById("questions").innerHTML = `<h2>${questions[counter]["question"]}</h2>`;
+        document.getElementById("answer_1").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_1"]}</a>`;
+        document.getElementById("answer_2").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_2"]}</a>`;
+        document.getElementById("answer_3").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_3"]}</a>`;
+        document.getElementById("answer_4").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_4"]}</a>`;
+
     }
 
-    document.getElementById("questions").innerHTML = `<h2>${questions[counter]["question"]}</h2>`;
-    document.getElementById("answer_1").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_1"]}</a>`;
-    document.getElementById("answer_2").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_2"]}</a>`;
-    document.getElementById("answer_3").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_3"]}</a>`;
-    document.getElementById("answer_4").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_4"]}</a>`;
+    
     
 }
 
