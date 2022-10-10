@@ -33,11 +33,20 @@ let questions = [
         "answer_3":"Antwort3",
         "answer_4":"Antwort4",
         "right_answer": 4   
+    },
+    {
+        "question": "Wer x5?",
+        "answer_1":"Antwort1",
+        "answer_2":"Antwort2",
+        "answer_3":"Antwort3",
+        "answer_4":"Antwort4",
+        "right_answer": 4   
     }
 ];
 
 let counter = 0;
 let rightQuestions = 0;
+let progress = questions.length;
 
 
 
@@ -88,17 +97,26 @@ function answer(selection){
 
 function nextQuestion() {
     counter += 1;
+    
     document.getElementById("question-number").innerHTML = counter+1;
     startQuiz(counter);
     document.getElementById("button").setAttribute("disabled","disabled")
     document.getElementById(`answer_${questions[counter-1].right_answer}`).classList.remove("bg-success")
     resetButton()
+    document.getElementById("progress-bar").style = `width: ${calculateProgress()}%;`;
+    document.getElementById("progress-bar").innerHTML = calculateProgress()+`%`;
 }
 
 function resetButton(){
     for(let i = 1; i <=4; i++){
         document.getElementById(`answer_${i}`).classList.remove("bg-danger")
     }
+}
+
+function calculateProgress(){
+    totalValue = questions.length
+    partialValue = counter;
+    return (100*partialValue) / totalValue;
 }
 
 
