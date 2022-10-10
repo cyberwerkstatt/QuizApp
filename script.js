@@ -119,4 +119,16 @@ function calculateProgress(){
     return (100*partialValue) / totalValue;
 }
 
+function restartQuiz(){
+    document.getElementById("container").style = '';
+    document.getElementById("endScreen").style = 'display: none';
+    counter = 0;
+    rightQuestions = 0;
+    progress = questions.length;
+    init();
+    document.getElementById("progress-bar").style = `width: 0%;`;
+    document.getElementById("progress-bar").innerHTML = ``;
+    document.getElementById("question-number").innerHTML = counter+1;
+}
+
 
