@@ -9,39 +9,32 @@ let questions = [
     },  
 
     {
-        "question": "Wer xxxxx?",
-        "answer_1":"Antwort1",
-        "answer_2":"Antwort2",
-        "answer_3":"Antwort3",
-        "answer_4":"Antwort4",
+        "question": "Wofür steht eine div?",
+        "answer_1":"Ein Bild",
+        "answer_2":"Einen Link",
+        "answer_3":"Einen Text",
+        "answer_4":"Einen Container",
         "right_answer": 4   
     },
 
     {
-        "question": "Wer 3?",
-        "answer_1":"Antwortx",
-        "answer_2":"Antworty",
-        "answer_3":"Antwortz",
-        "answer_4":"Antwortu",
+        "question": "Wer hat Linux erfunden?",
+        "answer_1":"Bill Gates",
+        "answer_2":"James Cook",
+        "answer_3":"Didi Mateschitz",
+        "answer_4":"Linus Torvalds",
         "right_answer": 4   
     },
 
     {
-        "question": "Wer x4?",
-        "answer_1":"Antwort1",
-        "answer_2":"Antwort2",
-        "answer_3":"Antwort3",
-        "answer_4":"Antwort4",
-        "right_answer": 4   
+        "question": "Was ist das Apple-Logo?",
+        "answer_1":"Birne",
+        "answer_2":"Banane",
+        "answer_3":"Apfel",
+        "answer_4":"Pommes",
+        "right_answer": 3   
     },
-    {
-        "question": "Wer x5?",
-        "answer_1":"Antwort1",
-        "answer_2":"Antwort2",
-        "answer_3":"Antwort3",
-        "answer_4":"Antwort4",
-        "right_answer": 4   
-    }
+    
 ];
 
 let counter = 0;
