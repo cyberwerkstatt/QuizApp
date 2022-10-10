@@ -47,6 +47,9 @@ let questions = [
 let counter = 0;
 let rightQuestions = 0;
 let progress = questions.length;
+let success = new Audio("./sounds/success.mp3");
+let fail = new Audio("./sounds/fail.mp3");
+
 
 
 
@@ -67,15 +70,12 @@ function startQuiz(counter){
     } else {
         
         document.getElementById("questions").innerHTML = `<h2>${questions[counter]["question"]}</h2>`;
+        
         document.getElementById("answer_1").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_1"]}</a>`;
         document.getElementById("answer_2").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_2"]}</a>`;
         document.getElementById("answer_3").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_3"]}</a>`;
         document.getElementById("answer_4").innerHTML = `<a class="card-body" href="#">${questions[counter]["answer_4"]}</a>`;
-
     }
-
-    
-    
 }
 
 function answer(selection){
@@ -92,6 +92,9 @@ function answer(selection){
     
     if (selection == idOfRightAnswer){
         rightQuestions ++;
+        fail.play();
+    } else {
+        success.play();
     }
 }
 
@@ -130,5 +133,3 @@ function restartQuiz(){
     document.getElementById("progress-bar").innerHTML = ``;
     document.getElementById("question-number").innerHTML = counter+1;
 }
-
-
